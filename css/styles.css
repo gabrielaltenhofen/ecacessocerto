@@ -17,7 +17,8 @@ label {
 }
 
 .logo img {
-    width: 150px;
+    width: 200px;
+    margin: 20px;
 }
 
 .content {
@@ -68,7 +69,8 @@ button {
 }
 
 button:hover {
-    background-color: #007bffff;
+    background-color: rgb(132, 180, 231);
+    color: 007bffff;
 }   
 
 .return-button {
@@ -155,7 +157,7 @@ button:hover {
     }
 
     .logo img {
-        width: 100px; /* Reduza o tamanho do logo para telas menores */
+        width: 200px; /* Reduza o tamanho do logo para telas menores */
     }
 
     .content {

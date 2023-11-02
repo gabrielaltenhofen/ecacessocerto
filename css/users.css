@@ -5,7 +5,8 @@
 }
 
 .logo img {
-    width: 150px;
+    width: 200px;
+    margin: 20px;
 }
 
 .content {
@@ -105,7 +106,7 @@ button {
 }
 
 button:hover {
-    background-color: rgba(0, 189, 54, 0.367);
+    background-color: rgb(132, 180, 231);
     color: rgba(0, 0, 0, 0.367);
 }
 

@@ -45,9 +45,12 @@ body {
 }
 
 
+
 .logo img {
     width: 200px;
+    margin: 20px;
 }
+
 .centralize {
     display: grid;
     justify-content: center; /* Centraliza horizontalmente */

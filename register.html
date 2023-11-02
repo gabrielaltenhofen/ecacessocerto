@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Administrador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<header class="header">
+    <div class="logo">
+        <img src="icons/acessofacil.png" alt="Logo">
+    </div>
+    <div>
+        <a href="menu.html" class="return-button"> Home <i class="fas fa-home"></i></a>
+    </div>
+    <div class="user-info">
+        <span id="userName">Carregando...</span>
+    </div>
+</header>
+
+<body>
+    <div class="content">
+        <h1 class="centralize">Cadastrar Administrador</h1>
+        <div class="">
+            <label>Insira os dados para cadastro abaixo:</label>
+            <div>
+                <input type="email" required placeholder="seu@email.com" onchange="onChangeEmail()" id="email"/>
+            </div>
+            <div>
+                <input type="password" required placeholder="Senha" id="password" onchange="onChangePassword()"/>
+            </div>
+            <div>
+                <input type="password" required placeholder="Confirmar senha" id="confirmPassword" onchange="onChangeConfirmPassword()"/>
+            </div>
+                <button id="salvarButton" onclick="register()" style="width: 100%;">Registrar</button>
+        </div>
+    </div>
+</body>
+
+<link rel="stylesheet" href="css/loading.css">
+<link rel="stylesheet" href="css/users.css">
+
+<script src="js/register.js"></script>
+<script src="js/validations.js"></script>
+<script src="js/loading.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth-guard.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let usuario_logado = getCookie('userName');
+        let input = document.getElementById("userName").innerHTML = '<i class="fas fa-user"></i> <strong>Usuário:</strong> ' + usuario_logado;
+    });
+</script>
+
+</html>
