@@ -1,0 +1,206 @@
+/* CSS existente */
+.header {
+    background-color: #007bffff;
+    color: white;
+    padding: 10px 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: flex;
+    padding: 10px 0;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 00px auto 0; /* Ajuste o valor da margem superior conforme desejado */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    width: 98%;
+}
+
+input {
+    width: 100%;
+}
+
+.obs{
+    width: 102%;
+}
+
+button {
+    background-color: #007bffff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+}
+
+button:hover {
+    background-color: #007bffff;
+}   
+
+.return-button {
+    background-color: white;
+    padding: 10px;
+    color:#007bffff;
+    border: solid 1px;
+    border-radius: 180px;
+    border-color: white;
+    text-decoration: none;
+}
+
+.return-button:hover {
+    color:white;
+    background-color: #007bffff;
+}
+
+
+
+.pdf-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pdf-table th, .pdf-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .pdf-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .pdf-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .pdf-table tr:hover {
+    background-color: #ddd;
+  }
+
+  .tabela {
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: Arial, sans-serif; /* Defina a fonte desejada */
+  }
+
+  .tabela th, .tabela td {
+    border: 1px solid #000; /* Adicione as bordas para as células */
+    padding: 5px;
+    width: 70px; /* Defina a largura desejada para todas as células */
+  }
+
+  .escolha{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+  .tabela thead th {
+    border: none;
+  }
+
+
+
+
+  .pdf-table {
+    width: 100%;
+    font-size: 11px; /* Defina o tamanho da fonte desejado */
+  }
+
+  .pdf-table th, .pdf-table td {
+    border: 1px solid #000; /* Adicione as bordas para as células */
+    padding: 4px;
+    width: 70px; /* Defina a largura desejada para todas as células */
+  }
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 100px; /* Reduza o tamanho do logo para telas menores */
+    }
+
+    .content {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px; /* Reduza o tamanho da fonte do título para telas menores */
+    }
+
+    form > div {
+        margin-bottom: 10px;
+    }
+
+    label {
+        padding: 5px 0;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="time"],
+    input[type="date"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        padding: 5px;
+    }
+
+    .obs {
+        width: 100%; /* Garanta que a área de observações se ajuste à tela */
+    }
+
+    button {
+        padding: 5px;
+        width: 100%; /* Faça o botão ocupar toda a largura da tela */
+    }
+    .return-button {
+        position: fixed;
+        top: 40px;
+        left: 10px;
+        z-index: 999; /* Isso garante que o botão esteja acima de outros elementos */
+    }
+    input[type="radio"] {
+        display: none; /* Esconde o botão de rádio padrão */
+    }
+  
+}

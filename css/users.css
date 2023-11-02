@@ -1,0 +1,245 @@
+.header {
+    background-color: #007bffff;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 00px auto 0;
+    /* Ajuste o valor da margem superior conforme desejado */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    width: auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    padding: 5px;
+}
+
+/* Defina a cor de fundo para linhas pares (2, 4, 6, etc.) */
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+    /* Cor de fundo para linhas pares */
+}
+
+/* Defina a cor de fundo para linhas ímpares (1, 3, 5, etc.) */
+tr:nth-child(odd) td {
+    background-color: #ffffff;
+    /* Cor de fundo para linhas ímpares */
+}
+
+
+th {
+    border: 2px solid black;
+    background-color: #007bffff;
+}
+
+.tabela {
+    color: white;
+    font-size: 15px;
+}
+
+
+tbody {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 10px;
+    width: 98%;
+    margin-bottom: 5px;
+}
+
+.escolha {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bffff;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background-color: rgba(0, 189, 54, 0.367);
+    color: rgba(0, 0, 0, 0.367);
+}
+
+
+.editar-button {
+    background-color: rgb(255, 242, 0);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 30px;
+    /* Defina a largura desejada em pixels */
+    height: 30px;
+    /* Defina a altura desejada em pixels */
+}
+
+.editar-button:hover {
+    background-color: rgba(255, 242, 0, 0.489);
+    color: rgba(0, 0, 0, 0.367);
+}
+
+
+.return-button {
+    background-color: white;
+    padding: 10px;
+    color: #007bffff;
+    border: solid 1px;
+    border-radius: 180px;
+    border-color: white;
+    text-decoration: none;
+}
+
+.return-button:hover {
+    color: white;
+    background-color: #007bffff;
+}
+
+
+.Inativo {
+    background-color: red !important;
+    color: white;
+    /* Define a cor do texto como branco para maior visibilidade */
+}
+
+.Ativo {
+    background-color: green !important;
+    color: white;
+    /* Define a cor do texto como branco para maior visibilidade */
+}
+
+/* Estilos para tornar a tabela responsiva */
+.tabelageral {
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    /* A tabela ocupará 100% da largura disponível */
+    overflow-x: auto;
+    /* Adiciona rolagem horizontal quando a tabela não couber na tela */
+    max-width: 800px;
+    margin: 00px auto 0;
+    /* Ajuste o valor da margem superior conforme desejado */
+}
+
+.tabelageral th,
+.tabelageral td {
+    border: 1px solid #b1b1b1;
+    padding: 10px;
+    font-size: 16px;
+    /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+/* Opcional: Estilize as células da primeira linha (cabeçalho) de forma diferente, se desejar */
+.tabelageral th {
+    background-color: #007bffff;
+    font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 100px;
+        /* Reduza o tamanho do logo para telas menores */
+    }
+
+    .content {
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        /* Reduza o tamanho da fonte do título para telas menores */
+    }
+
+    form>div {
+        margin-bottom: 10px;
+    }
+
+    label {
+        padding: 5px 0;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="time"],
+    input[type="date"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+        padding: 5px;
+    }
+
+    .obs {
+        width: 100%;
+        /* Garanta que a área de observações se ajuste à tela */
+    }
+
+    button {
+        padding: 5px;
+        width: 100%;
+        /* Faça o botão ocupar toda a largura da tela */
+    }
+
+    .return-button {
+        position: fixed;
+        top: 40px;
+        left: 10px;
+        z-index: 999;
+        /* Isso garante que o botão esteja acima de outros elementos */
+    }
+}

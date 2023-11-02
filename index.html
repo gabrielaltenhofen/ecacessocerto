@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/loading.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="icons/acessofacil.png" alt="Imagem de Fundo">
+            <form>
+                <div class="form-group">
+                    <div><label>Email</label></div>
+                    <input type="email" name="email" id="email" placeholder="seu@email.com"
+                        onchange="onChangeEmail()" />
+                    <div class="error" id="email-required-error">Email é obrigatório</div>
+                    <div class="error" id="email-invalid-error">Email é inválido</div>
+                </div>
+                <div class="form-group">
+                    <div><label>Senha</label></div>
+                    <input type="password" name="password" id="password" placeholder="Senha"
+                        onchange="onChangePassword()" />
+                    <div class="error" id="password-required-error">Senha é obrigatória</div>
+                </div>
+                <div>
+                    <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()"
+                        disabled="true">Recuperar senha</button>
+                </div>
+                <div>
+                    <button type="button" class="solid" id="login-button" disabled="true"
+                        onclick="login()">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="js/login.js"></script>
+    <script src="js/validations.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/loading.js"></script>
+</body>
+</html>

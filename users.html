@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Colaboradores</title>
+    <link rel="stylesheet" href="css/users.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<header class="header">
+    <div class="logo">
+        <img src="icons/acessofacil.png" alt="Logo">
+    </div>
+    <a href="menu.html" class="return-button"> Home <i class="fas fa-home"></i></a>
+    <div class="user-info">
+        <span id="userName">Carregando...</span>
+    </div>
+</header>
+
+<body>
+    <div class="centralize">
+        <h1>Gerenciamento de Colaboradores</h1>
+    </div>
+    <div class="content">
+        <input type="text" id="nameFilter" placeholder="Filtrar por Nome">
+        <button id="filtrarButton"><i class="fas fa-search"></i></button>
+        <button id="imprimir">Imprimir <i class="far fa-file-archive"></i></button>
+        <button id="imprimirTodos">Imprimir Todos <i class="far fa-file-archive"></i></button>
+    </div>
+    <div class="tabelageral">
+        <div id="tables">
+            <table class="auto-ajustar-tabela">
+                <thead id="exibirTodosHeader">
+                    <tr class="tabela">
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Tag</th>
+                        <th>CPF</th>
+                        <th>Cidade</th>
+                        <th>Status</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <thead id="filtrarHeader" style="display: none;">
+                </thead>
+                <tbody id="funcionariosTableBody">
+                    <!-- Conteúdo da tabela #funcionariosTableBody -->
+                </tbody>
+            </table>
+            <table>
+                <thead id="searchHeader" style="display: none;">
+                    <!-- Cabeçalho da tabela de pesquisa -->
+                </thead>
+                <tbody id="funcionariosTableBodyfiltro">
+                    <!-- Conteúdo da tabela #funcionariosTableBodyfiltro -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Captura os botões e os cabeçalhos
+        const filtrarButton = document.getElementById("filtrarButton");
+        const exibirTodosHeader = document.getElementById("exibirTodosHeader");
+        const filtrarHeader = document.getElementById("filtrarHeader");
+        const searchHeader = document.getElementById("searchHeader");
+
+
+        // Adiciona um ouvinte de eventos ao botão "Filtrar"
+        filtrarButton.addEventListener("click", function () {
+            // Exibe o cabeçalho de "Filtrar" e oculta os outros cabeçalhos
+            exibirTodosHeader.style.display = "none";
+            filtrarHeader.style.display = "table-row";
+            searchHeader.style.display = "none";
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let usuario_logado = getCookie('userName');
+            let input = document.getElementById("userName").innerHTML = '<i class="fas fa-user"></i> <strong>Usuário:</strong> ' + usuario_logado;
+        });
+    </script>
+
+    <script>
+        // Função para ajustar as colunas da tabela
+        function ajustarColunas() {
+            $('.auto-ajustar-tabela').each(function () {
+                $(this).css('table-layout', 'auto');
+            });
+        }
+
+        // Chame a função após o carregamento da página ou quando o conteúdo da tabela for alterado
+        $(document).ready(function () {
+            ajustarColunas();
+        });
+
+        // Exemplo de como chamar a função após adicionar ou alterar o conteúdo da tabela dinamicamente
+        $('#funcionariosTableBody').append('<tr>...</tr>');
+        ajustarColunas();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/auth-guard.js"></script>
+    <script src="js/users.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+/* styles para a página de login */
+body.login-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #007bffff;
+    color: white;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background-color: #007bffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin-top: 20px;
+}
+
+.login-box img {
+    width: 80%;
+    max-height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white; /* Alterar a cor do texto para branco */
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255); /* Alterar a cor do texto para branco */
+}
+
+/* Alterar a cor do texto dos campos de entrada para preto */
+.form-group input {
+    width: 100%;
+    padding: 5px; /* Reduzir o tamanho do padding para diminuir o tamanho dos campos de entrada */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Alterar a cor de fundo para branco */
+    color: black; /* Alterar a cor do texto dos campos de entrada para preto */
+}
+
+/* Alterar o comprimento da caixa do campo */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%; /* Ajuste o valor conforme necessário */
+    margin-bottom: 10px;
+}
+
+/* Alterar a cor do botão "Entrar" para branco com texto verde */
+button {
+    background-color: white;
+    color: #007bffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+button[disabled] {
+    opacity: 0.8;
+    margin-right: 10px;
+}
+
+button:active {
+    opacity: 0.8;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: #007bffff;
+    color: white; /* Alterar a cor do texto para branco ao passar o mouse */
+    margin-right: 10px;
+}
+
+.error {
+    background: red;
+    color: white;
+    display: none;
+} 
+
+.outline {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
