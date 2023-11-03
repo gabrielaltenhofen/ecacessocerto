@@ -21,10 +21,6 @@
 <body>
     <div class="centralize">
         <div class="grid-container">
-            <button class="grid-item" onclick="location.href='cadastro.html'">Cadastrar Colaborador <i class="fas fa-user"></i></button>
-            <button class="grid-item" onclick="location.href='users.html'">Colaboradores <i class="fas fa-user-cog"></i></button>
-            <button class="grid-item" onclick="location.href='historico.html'">Histórico <i class="far fa-clock"></i></button>
-            <button class="grid-item" onclick="location.href='register.html'">Registro de Administrador <i class="fas fa-user-tag"></i></button>
             <button class="grid-item" onclick="location.href='gerarcodigo.html'">Gerar Código <i class="fas fa-code"></i></button>
             <button class="grid-item" onclick='logout()'>Sair <i class="fas fa-sign-out-alt"></i></button>
         </div>
@@ -32,7 +28,7 @@
 <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
 <script src="js/firebase-init.js"></script>
-
+<script src="js/auth-guard.js"></script>
 <script src="js/loading.js"></script>
 
 <script>

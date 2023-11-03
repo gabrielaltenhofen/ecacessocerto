@@ -8,38 +8,6 @@ submitBtn.addEventListener('click', sendData);
 const cpfInput = document.getElementById('cpf');
 cpfInput.addEventListener('input', formatAndValidateCPF);
 
-const rgInput = document.getElementById('rg');
-rgInput.addEventListener('input', formatAndValidateRG);
-
-const telefoneInput = document.getElementById('telefone');
-telefoneInput.addEventListener('input', formatPhone);
-
-function formatPhone() {
-    let value = telefoneInput.value.replace(/\D/g, '');
-
-    if (value.length > 13) {
-        value = value.slice(0, 13);
-    }
-
-    if (value.length >= 2) {
-        // Adicione parênteses para o DDD
-        value = `(${value.substring(0, 2)})${value.substring(2)}`;
-    }
-    telefoneInput.value = value;
-}
-
-
-function formatAndValidateRG() {
-    let value = rgInput.value.replace(/\D/g, '');
-
-    if (value.length > 10) {
-        value = value.slice(0, 10);
-    }
-
-    rgInput.value = value;
-}
-
-
 function formatAndValidateCPF() {
     let value = cpfInput.value.replace(/\D/g, '');
 
@@ -66,6 +34,7 @@ function sendData() {
     const cpf = cpfInput.value.replace(/\D/g, '');
     const cidade = document.getElementById('cidade').value;
     const status = document.getElementById('status').value;
+    const nivelAcesso = document.getElementById('nivelAcesso').value;
 
 
     document.getElementById('tagError').textContent = '';
@@ -93,8 +62,12 @@ function sendData() {
                         'cidade': cidade,
                         'tag': tag,
                         'cpf': cpf,
-                        'status': status
-                    }).then(() => {
+                        'status': status,
+                        'nivelAcesso': nivelAcesso
+                    })
+                
+                    .then(() => {
+                        register();
                         // Limpe os campos após o cadastro bem-sucedido
                         document.getElementById('name').value = '';
                         document.getElementById('email').value = '';
@@ -102,7 +75,7 @@ function sendData() {
                         cpfInput.value = '';
                         document.getElementById('cidade').value = '';
                        document.getElementById('status').value = '';
-                
+                       document.getElementById('nivelAcesso').value = '';
                         alert('Cadastro criado com sucesso!');
                     }).catch((error) => {
                         alert('Erro ao salvar os dados: ', error);

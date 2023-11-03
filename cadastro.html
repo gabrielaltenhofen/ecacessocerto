@@ -34,10 +34,21 @@
             <span id="tagError" style="color: red;"></span>
             <input type="text" id="cpf" placeholder="CPF (somente números)">
             <span id="cpfError" style="color: red;"></span>
+
+            <input type="password" id="password" placeholder="Senha" required>
+            <input type="password" id="confirmPassword" placeholder="Confirme a Senha" required>
+
             <label>Colaborador ativo?</label>
+
             <select class="escolha" id="status" required>
                 <option value="Ativo">Sim</option>
                 <option value="Inativo">Não</option>
+            </select>
+
+            <label>Selecione o nível de acesso:</label>
+            <select class="escolha" id="nivelAcesso" required>
+                <option value="admin">Administrador</option>
+                <option value="user">Usuário</option>
             </select>
 
             <button id="submitBtn">Cadastrar</button>
@@ -47,12 +58,10 @@
     <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
-
-    <script src="js/loading.js"></script>
     <script src="js/firebase-init.js"></script>
-    <script src="js/auth-guard.js"></script>
-
+    <script src="js/loading.js"></script>
     <script src="js/cadastro.js"></script>
+    <script src="js/register.js"></script>
     <script src="js/menu.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

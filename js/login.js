@@ -8,19 +8,56 @@ function onChangePassword() {
     togglePasswordErrors();
 }
 
+function emailToPath(email) {
+    // Substitua "." por "___" para criar um caminho válido
+    return email.replace(".", "___");
+}
 function login() {
     showLoading();
-    firebase.auth().signInWithEmailAndPassword(
-        form.email().value, form.password().value
-    ).then(response => {
+    const userEmail = form.email().value;
+
+    // Faça uma consulta no Realtime Database para obter o CPF com base no e-mail
+    const usersRef = firebase.database().ref('usuarios');
+    usersRef.orderByChild('email').equalTo(userEmail).once('value').then(snapshot => {
         hideLoading();
-        document.cookie = `userName=${response.user._delegate.email}`;
-        window.location.href = "menu.html";
+
+        if (snapshot.exists()) {
+            // Obtenha o CPF do usuário
+            const userCPF = Object.keys(snapshot.val())[0];
+
+            // Faça login com o CPF
+            firebase.auth().signInWithEmailAndPassword(userEmail, form.password().value).then(response => {
+                if (response) {
+                    if (response.user._delegate.email === userEmail) {
+                        // Redireciona o usuário com o CPF correspondente
+                        document.cookie = `userName=${userEmail}`;
+                        if (userCPF) {
+                            const userData = snapshot.val()[userCPF];
+                            if (userData.nivelAcesso === 'admin') {
+                                // Redireciona o usuário para o menu.html
+                                window.location.href = "menu.html";
+                            } else {
+                                // Redireciona o usuário para o home.html
+                                window.location.href = "home.html";
+                            }
+                        } else {
+                            alert('Usuário não encontrado no banco de dados.');
+                        }
+                    }
+                }
+            }).catch(error => {
+                alert(getErrorMessage(error));
+            });
+        } else {
+            alert('Usuário não encontrado no banco de dados.');
+        }
     }).catch(error => {
         hideLoading();
-        alert(getErrorMessage(error));
+        alert('Erro ao buscar informações do usuário: ' + error.message);
     });
 }
+
+
 
 function getErrorMessage(error) {
     if (error.code == "auth/user-not-found") {
