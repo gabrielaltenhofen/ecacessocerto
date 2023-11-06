@@ -1,97 +1,89 @@
-/* styles para a página de login */
-body.login-page {
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #007bffff;
-    color: white;
-}
-
-.login-container {
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
+    background-color: #007bffff;
+}
+
+.login-container {
+    background-color: white;
+    color: #007bffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Centralize horizontalmente */
 }
 
 .login-box {
-    background-color: #007bffff;
-    padding: 20px;
-    border-radius: 10px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    width: 400px;
-    margin-top: 20px;
+}
+
+
+.login-content {
+    padding: 20px;
+}
+
+h2 {
+    color: #007bffff;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-button {
+    background-color: #007bffff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 10px !important;
+    margin: 20px;
+}
+
+.login-button:hover {
+    background-color: rgb(151, 190, 233);
+    color: black;
+}
+
+.forgot-password {
+    color: #007bffff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: white;
 }
 
 .login-box img {
-    width: 80%;
+    width: 90%;
     max-height: 300px;
+    margin-top: 20px;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin-bottom: 10px;
-}
-
-.login-box h2 {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: white; /* Alterar a cor do texto para branco */
-}
-
-.form-group {
-    margin-bottom: 0px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: rgb(255, 255, 255); /* Alterar a cor do texto para branco */
-}
-
-/* Alterar a cor do texto dos campos de entrada para preto */
-.form-group input {
-    width: 100%;
-    padding: 5px; /* Reduzir o tamanho do padding para diminuir o tamanho dos campos de entrada */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff; /* Alterar a cor de fundo para branco */
-    color: black; /* Alterar a cor do texto dos campos de entrada para preto */
-}
-
-/* Alterar o comprimento da caixa do campo */
-.form-group input[type="text"],
-.form-group input[type="password"] {
-    width: 100%; /* Ajuste o valor conforme necessário */
-    margin-bottom: 10px;
-}
-
-/* Alterar a cor do botão "Entrar" para branco com texto verde */
-button {
-    background-color: white;
-    color: #007bffff;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
-}
-
-button[disabled] {
-    opacity: 0.8;
-    margin-right: 10px;
-}
-
-button:active {
-    opacity: 0.8;
-    margin-right: 10px;
-}
-
-button:hover {
-    background-color: #007bffff;
-    color: white; /* Alterar a cor do texto para branco ao passar o mouse */
-    margin-right: 10px;
 }
 
 .error {
@@ -105,4 +97,12 @@ button:hover {
     color: white;
     border: 1px solid white;
 }
+
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
+}
+
+
 

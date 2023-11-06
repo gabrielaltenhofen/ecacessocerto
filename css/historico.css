@@ -66,7 +66,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     width: auto;
-}
+} 
 
 button:hover {
     background-color: rgb(132, 180, 231);
@@ -88,69 +88,49 @@ button:hover {
     background-color: #007bffff;
 }
 
-
-
-.pdf-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .pdf-table th, .pdf-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .pdf-table th {
-    background-color: #f2f2f2;
-  }
-  
-  .pdf-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .pdf-table tr:hover {
-    background-color: #ddd;
-  }
-
-  .tabela {
-    border-collapse: collapse;
-    font-size: 12px;
-    font-family: Arial, sans-serif; /* Defina a fonte desejada */
-  }
-
-  .tabela th, .tabela td {
-    border: 1px solid #000; /* Adicione as bordas para as células */
-    padding: 5px;
-    width: 70px; /* Defina a largura desejada para todas as células */
-  }
-
-  .escolha{
+.escolha{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
-  .tabela thead th {
-    border: none;
-  }
+.tabela {
+    width: 98%;
+    margin: 10px auto;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
 
-
-
-
-  .pdf-table {
+.tabela table {
     width: 100%;
-    font-size: 11px; /* Defina o tamanho da fonte desejado */
-  }
+}
 
-  .pdf-table th, .pdf-table td {
-    border: 1px solid #000; /* Adicione as bordas para as células */
-    padding: 4px;
-    width: 70px; /* Defina a largura desejada para todas as células */
-  }
+.tabela th, .tabela td {
+    border: 1px solid #000;
+    padding: 8px;
+    width: auto;
+    text-align: center; /* Centraliza horizontalmente */
+    vertical-align: middle; /* Centraliza verticalmente */
+}
 
-  @media (max-width: 768px) {
+.tabela tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Linhas ímpares em uma cor */
+}
+
+.tabela tr:nth-child(even) {
+    background-color: #ffffff; /* Linhas pares em outra cor */
+}
+
+.centralize-tabela {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+@media (max-width: 768px) {
     .header {
         padding: 10px 20px;
     }

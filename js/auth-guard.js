@@ -22,7 +22,7 @@ firebase.auth().onAuthStateChanged(user => {
                     // Redirecione para uma página de acesso negado
                     redirectToLoginPage();
                 }
-            }
+            }   
         });
     } else {
         // O usuário não está autenticado, redirecione para a página de login

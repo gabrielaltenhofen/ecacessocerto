@@ -143,6 +143,15 @@ document.addEventListener("DOMContentLoaded", function () {
                             <option value="Inativo" ${funcionario.status === "Inativo" ? "selected" : ""}>Inativo</option>
                         </select>
                     </p>
+                    <p>
+                        <label for="nivelAcessoInput">Nível de Acesso:</label>
+                    </p>
+                    <p>
+                    <select class="escolha" id="nivelAcesso" required>
+                        <option value="admin" ${funcionario.nivelAcesso === "admin" ? "selected" : ""}>Adminstrador</option>
+                        <option value="user" ${funcionario.nivelAcesso === "user" ? "selected" : ""}>Usuário</option>
+                    </select>
+                </p>
               
                     <button id="salvarEdicaoButton" style="width: 100%;">Salvar</button>
                 </div>
@@ -158,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const novaCidade = document.getElementById("cidadeInput").value;
                 const novaTag = document.getElementById("tagInput").value;
                 const novoStatus = document.getElementById("status").value;
+                const novonivelAcesso = document.getElementById("nivelAcesso").value;
     
                 // Atualize o funcionário com os novos valores
                 const novoFuncionario = {
@@ -166,6 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     tag: novaTag,
                     cidade: novaCidade,
                     status: novoStatus,
+                    nivelAcesso: novonivelAcesso,
                 };
     
                 ref.update(novoFuncionario);

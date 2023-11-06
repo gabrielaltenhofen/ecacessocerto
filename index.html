@@ -1,45 +1,48 @@
-<!doctype html>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Login</title>
-    <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <title>Login</title>
 </head>
+
 <body>
     <div class="login-container">
         <div class="login-box">
-            <img src="icons/acessofacil.png" alt="Imagem de Fundo">
+            <img src="icons/login.png" alt="Imagem de Fundo">
             <form>
+                <h2><i class="fas fa-user"></i> Login</h2>
                 <div class="form-group">
-                    <div><label>Email</label></div>
-                    <input type="email" name="email" id="email" placeholder="seu@email.com"
-                        onchange="onChangeEmail()" />
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Seu E-mail" id="email" onchange="onChangeEmail()" required>
                     <div class="error" id="email-required-error">Email é obrigatório</div>
                     <div class="error" id="email-invalid-error">Email é inválido</div>
                 </div>
                 <div class="form-group">
-                    <div><label>Senha</label></div>
-                    <input type="password" name="password" id="password" placeholder="Senha"
-                        onchange="onChangePassword()" />
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Sua Senha" id="password" onchange="onChangePassword()" required>
                     <div class="error" id="password-required-error">Senha é obrigatória</div>
                 </div>
                 <div>
-                    <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()"
-                        disabled="true">Recuperar senha</button>
+                    <button type="button" class="login-button" id="login-button" disabled="true" onclick="login()">
+                        <i class="fas fa-sign-in-alt"></i> Entrar
+                    </button>
                 </div>
                 <div>
-                    <button type="button" class="solid" id="login-button" disabled="true"
-                        onclick="login()">Entrar</button>
+                    <button type="button" class="login-button" id="recover-password-button" onclick="recoverPassword()" disabled="true">
+                        <i class="fas fa-key"></i> Recuperar senha
+                    </button>
                 </div>
             </form>
+            
         </div>
     </div>
-
-
     <script src="js/login.js"></script>
     <script src="js/validations.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>

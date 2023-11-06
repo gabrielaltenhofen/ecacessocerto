@@ -15,25 +15,30 @@ body {
     align-items: center;
 }
 
-.grid-container{
-    max-height: 80vh; 
+.grid-container {
+    max-height: 80vh;
     overflow-y: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas com largura igual */
-    grid-gap: 10px; /* Espaçamento entre os itens */
-    grid-auto-rows: minmax(100px, auto); /* Altura mínima de 100px */
-    margin-top: 20px; /* Adiciona uma margem de 20px na parte superior da grade */
+    grid-template-columns: repeat(3, 1fr);
+    /* Cria 3 colunas com largura igual */
+    grid-gap: 10px;
+    /* Espaçamento entre os itens */
+    grid-auto-rows: minmax(100px, auto);
+    /* Altura mínima de 100px */
+    margin-top: 20px;
+    /* Adiciona uma margem de 20px na parte superior da grade */
 }
 
 .grid-item {
     background-color: #007bffff;
     color: white;
     text-align: center;
-    padding: 50px;
+    padding: 90PX;
     border-radius: 10px;
     border: 1px solid #ccc;
     margin-top: 20px;
     max-width: 200%;
+    font-size: 20PX;
 }
 
 .grid-item:hover {
@@ -45,7 +50,6 @@ body {
 }
 
 
-
 .logo img {
     width: 200px;
     margin: 20px;
@@ -53,22 +57,36 @@ body {
 
 .centralize {
     display: grid;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
 }
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column; 
+        flex-direction: column;
         text-align: center;
     }
 
     .logo img {
-        margin: 0; 
+        margin: 0;
     }
 
     .grid-container {
-        grid-template-columns: 1fr; 
-        justify-content: center; 
+        grid-template-columns: 1fr;
+        justify-content: center;
     }
+
+    .grid-item {
+        background-color: #007bffff;
+        color: white;
+        text-align: center;
+        padding: 50PX;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+        max-width: 200%;
+    }
+
 }

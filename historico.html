@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Histórico</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/menu.css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="icon" href="icons/iconeabaporta.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Ponto</title>
+    <link rel="stylesheet" href="css/historico.css">
+    <link rel="stylesheet" href="css/menu.css">
+    
+    <link rel="icon" href="icons/iconeaba.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
-  <header class="header">
+<header class="header">
     <div class="logo">
-      <img src="icons/acessofacil.png" alt="Logo">
+        <img src="icons/acessofacil.png" alt="Logo">
     </div>
     <div>
-      <a href="menu.html" class="return-button"> Home <i class="fas fa-home"></i></a>
+        <a href="menu.html" class="return-button"> Home <i class="fas fa-home"></i></a>
     </div>
     <div class="user-info">
-      <span id="userName">Carregando...</span>
+        <span id="userName">Carregando...</span>
     </div>
-  </header>
-
-  <div class="content">
-    <h1 class="centralize">Histórico de Acessos</h1>
-    <div class="from">
-      <input type="text" id="funcionarioId" placeholder="ID do Funcionário">
-      <input type="text" id="ano" placeholder="Ano">
-      <select id="mes" class="escolha">
-        <option value="01">Janeiro</option>
-        <option value="02">Fevereiro</option>
-        <option value="03">Março</option>
-        <option value="04">Abril</option>
-        <option value="05">Maio</option>
-        <option value="06">Junho</option>
-        <option value="07">Julho</option>
-        <option value="08">Agosto</option>
-        <option value="09">Setembro</option>
-        <option value="10">Outubro</option>
-        <option value="11">Novembro</option>
-        <option value="12">Dezembro</option>
-      </select>
-      <button id="consultar">Consultar <i class="fas fa-search"></i></button>
-      <p id="nomeFuncionario"></p>
-      <div id="resultados"></div>
+</header>
+<body>
+    <div class="centralize">
+        <h1>Histórico de Ponto</h1>
     </div>
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
-  <script src="js/firebase-init.js"></script>
-  <script src="js/auth-guard.js"></script>
-  <script src="js/historico.js"></script>
-  <script>
+    <div class="centralize-tabela">
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Adicione as linhas da tabela aqui -->
+            </tbody>
+        </table>
+    </div>
+        
+  
+<!-- add firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.12.1/firebase-database-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+<script src="js/loading.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/historico.js"></script>
+<script src="js/cadastro.js"></script>
+<script src="js/menu.js"></script>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
-      let usuario_logado = getCookie('userName');
-      let userNameElement = document.getElementById("userName");
-      userNameElement.innerHTML = '<i class="fas fa-user"></i> <strong>Usuário:</strong> ' + usuario_logado;
-    });
-  </script>
+    let usuario_logado = getCookie('userName');
+    let input = document.getElementById("userName").innerHTML = '<i class="fas fa-user"></i> <strong>Usuário:</strong> ' + usuario_logado;
+});
+</script>
 </body>
 </html>
